@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PoseNet Example</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        flex-direction: column;
+        background-color: #f4f4f9;
+        font-family: Arial, sans-serif;
+      }
+      .video-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+      video {
+        display: block;
+        margin-right: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      canvas {
+        border: 1px solid black;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      input[type="file"] {
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 2px solid #007bff;
+        border-radius: 5px;
+        background-color: #ffffff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s, border-color 0.3s;
+      }
+      input[type="file"]:hover {
+        background-color: #e9f5ff;
+        border-color: #0056b3;
+      }
+      button {
+        margin: 10px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      button:active {
+        background-color: #004494;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display: flex">
+      <input type="file" id="videoInput" accept="video/*" />
+      <button id="runButton">Correr</button>
+      <button id="saveButton">Guardar Imagen</button>
+    </div>
+    <div class="video-container">
+      <video id="video" width="640" height="480" controls></video>
+      <canvas id="canvas" width="640" height="480"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
